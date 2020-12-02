@@ -46,6 +46,8 @@ public class Music_Activity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.btn_pause).setOnClickListener(this);
         findViewById(R.id.btn_continue_play).setOnClickListener(this);
         findViewById(R.id.btn_exit).setOnClickListener(this);
+        findViewById(R.id.next).setOnClickListener(this);
+        findViewById(R.id.pre).setOnClickListener(this);
 
         name=intent1.getStringExtra("name");
         name_song.setText(name);
@@ -156,6 +158,24 @@ public class Music_Activity extends AppCompatActivity implements View.OnClickLis
                 unbind(isUnbind);
                 isUnbind=true;
                 finish();
+                break;
+            case R.id.next:
+                String position2=intent1.getStringExtra("position");
+                int i2=parseInt(position2);
+                musicControl.nextmusic(i2);
+                ImageView iv_music=(ImageView)findViewById(R.id.iv_music);
+                iv_music.setImageResource(frag1.icons[i2+1]);
+                name_song=(TextView)findViewById(R.id.song_name);
+                name_song.setText(frag1.name[i2+1]);
+                break;
+            case R.id.pre:
+                String position3=intent1.getStringExtra("position");
+                int i3=parseInt(position3);
+                musicControl.premusic(i3);
+                ImageView iv_music3=(ImageView)findViewById(R.id.iv_music);
+                iv_music3.setImageResource(frag1.icons[i3-1]);
+                name_song=(TextView)findViewById(R.id.song_name);
+                name_song.setText(frag1.name[i3-1]);
                 break;
         }
     }

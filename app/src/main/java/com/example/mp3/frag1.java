@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment;
 
 public class frag1 extends Fragment {
     private View view;
-    public String[] name={"Ketsa —— Empty Playground","Ketsa —— Love is Here","Ketsa —— Playing With Shadows","Dee Yan —— Key night sky","Ketsa —— Endless Rivers"};
+    public static String[] name={"Ketsa —— Empty Playground","Ketsa —— Love is Here","Ketsa —— Playing With Shadows","Dee Yan —— Key night sky","Ketsa —— Endless Rivers"};
     public static int[] icons={R.drawable.music0,R.drawable.music1,R.drawable.music2,R.drawable.music3,R.drawable.music4};
     @Override
 

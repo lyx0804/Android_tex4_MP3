@@ -70,6 +70,14 @@ public class MusicService extends Service {
         public void seekTo(int progress){
             player.seekTo(progress);//设置音乐的播放位置
         }
+        public void nextmusic(int i){
+            player.stop();
+            play(i+1);
+        }
+        public void premusic(int i){
+            player.stop();
+            play(i-1);
+        }
     }
     @Override
     public void onDestroy(){
